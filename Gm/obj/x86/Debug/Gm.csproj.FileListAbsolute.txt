@@ -1,0 +1,5 @@
+c:\visual studio 2010\Projects\Gm\Gm\bin\Debug\Gm.exe
+c:\visual studio 2010\Projects\Gm\Gm\bin\Debug\Gm.pdb
+c:\visual studio 2010\Projects\Gm\Gm\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\visual studio 2010\Projects\Gm\Gm\obj\x86\Debug\Gm.exe
+c:\visual studio 2010\Projects\Gm\Gm\obj\x86\Debug\Gm.pdb
