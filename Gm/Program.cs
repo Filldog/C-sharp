@@ -9,7 +9,7 @@ using System.Diagnostics;
 namespace Gm
 {
 
-
+    
     class Program
     {
 
@@ -22,13 +22,14 @@ namespace Gm
             char[] map = new char[1999];
 
             string Enveroment="";
+            int DLG;
+            string Dialog1 = "Пошел прочь, нам не о чем разговаривать";
 
             char GG='@';
             int GGAtk = 1;
             int GGdef = 1;
             int GGHp = 10;
 
-            char Mob1,Mob2,Mob3,Mob4,Mob5;
 
             char[] Monstr =new char[10];
 
@@ -66,7 +67,7 @@ namespace Gm
                     lvlUpDate = false;
                 }
 
-                Debug.WriteLine(fight);
+                
                 deltaPos = 0;
                 K = Console.ReadKey().Key;
                 switch (K)
@@ -77,13 +78,15 @@ namespace Gm
 
                     case ConsoleKey.D:
                         deltaPos=Pos+1;
-                        if (map[deltaPos] != '#')
+                        if ((map[deltaPos] != '#') && (map[deltaPos] != '&'))
                         {
                             Pos = deltaPos;
                             for (i = 0; i <= 1919; i++)
                                 map[i] = Oldmap[i];
                                 map[Pos] = GG;
                         }
+                       
+
                         break;
 
                     case ConsoleKey.A:
@@ -133,8 +136,8 @@ namespace Gm
 
                             }
 
-                       
 
+                        const int pub = 1;
                         if (fight)
                         {
                             Console.WriteLine("fight");
@@ -142,7 +145,7 @@ namespace Gm
                         
 
                 }
-
+                
                           /////// Выводим графику
                          Enveroment = "";
                         for (i = 0; i <= 1919; i++)
@@ -152,7 +155,22 @@ namespace Gm
                         }
                         Console.Clear();
                        Console.Write(Enveroment);
-                        
+                     //////////////////////////////////////////////////////DLG////////////////
+
+                       if (map[Pos + 1] == '&')
+                       {
+                           Console.Clear();
+                           Console.Write(Dialog1 + "\n");
+                           Console.WriteLine("1) Ты грязный червь и не стоишь моего вниманий \n 2) Пойдем выйдем на пару слов \n3) ...\n Ввод:");
+                           DLG = Convert.ToInt32(Console.ReadLine());
+                           switch (DLG)
+                           {
+
+                               case 1:
+
+                                   break;
+                           }
+                       }
                         
                 }
             }
