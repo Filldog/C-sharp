@@ -23,7 +23,7 @@ namespace Gm
 
             string Enveroment="";
             int DLG;
-            string Dialog1 = "Пошел прочь, нам не о чем разговаривать";
+            string Dialog1 = "\nПьянчуга :Пошел прочь, нам не о чем разговаривать\n";
 
             char GG='@';
             int GGAtk = 1;
@@ -91,7 +91,7 @@ namespace Gm
 
                     case ConsoleKey.A:
                        deltaPos=Pos-1;
-                        if (map[deltaPos] != '#')
+                       if (map[deltaPos] != '#' && (map[deltaPos] != '&'))
                         {
                             Pos = deltaPos;
                             for (i = 0; i <= 1919; i++)
@@ -103,7 +103,7 @@ namespace Gm
                     case ConsoleKey.W:
                         //Thread.Sleep(100);
                          deltaPos=Pos-80;
-                        if (map[deltaPos] != '#')
+                         if (map[deltaPos] != '#' && (map[deltaPos] != '&'))
                         {
                             Pos = deltaPos;
                             for (i = 0; i <= 1919; i++)
@@ -114,7 +114,7 @@ namespace Gm
 
                     case ConsoleKey.S:
                          deltaPos=Pos+80;
-                        if (map[deltaPos] != '#')
+                         if (map[deltaPos] != '#' && (map[deltaPos] != '&'))
                         {
                             Pos = deltaPos;
                             for (i = 0; i <= 1919; i++)
@@ -161,13 +161,25 @@ namespace Gm
                        {
                            Console.Clear();
                            Console.Write(Dialog1 + "\n");
-                           Console.WriteLine("1) Ты грязный червь и не стоишь моего вниманий \n 2) Пойдем выйдем на пару слов \n3) ...\n Ввод:");
+                           Console.WriteLine("1) Ты грязный червь и не стоишь моего вниманий \n2) Пойдем выйдем на пару слов \n3) ...\n Ввод:");
                            DLG = Convert.ToInt32(Console.ReadLine());
                            switch (DLG)
                            {
 
                                case 1:
-
+                                   Console.WriteLine("Что ты там пролепетал?");
+                                   break;
+                               case 2:
+                                   Console.WriteLine("Ищи дурака.");
+                                   Thread.Sleep(2000);
+                                   Pos=Pos-2;
+                                   Console.Write(Enveroment);
+                                   break;
+                               case 3:
+                                   Console.WriteLine("Что? Сдулся, хахаха!");
+                                   Thread.Sleep(2000);
+                                   Pos=Pos-2;
+                                   Console.Write(Enveroment);
                                    break;
                            }
                        }
